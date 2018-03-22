@@ -4,7 +4,7 @@ ENV INSTALLER_DIR_MININET mininet/util/install.sh
 ENV REPOSITORY_DIR_MININET https://github.com/mininet/mininet.git
 
 RUN apt-get update && apt-get install -y \
-	git \
+    git \
     tcpdump \
     sudo
 
