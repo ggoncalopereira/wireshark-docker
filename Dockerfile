@@ -6,8 +6,9 @@ ENV REPOSITORY_DIR_MININET https://github.com/mininet/mininet.git
 RUN apt-get update && apt-get install -y \
     git \
     tcpdump \
-    wireshark \
     sudo
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install wireshark -y
 
 RUN git clone $REPOSITORY_DIR_MININET \
 
