@@ -10,15 +10,15 @@ RUN apt-get update && apt-get install -y \
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install wireshark -y
 
-RUN git clone $REPOSITORY_DIR_MININET \
+RUN git clone $REPOSITORY_DIR_MININET
 
-    && chmod +x $INSTALLER_DIR_MININET \
-    && ./$INSTALLER_DIR_MININET -fnv \
+RUN chmod +x $INSTALLER_DIR_MININET
+RUN ./$INSTALLER_DIR_MININET -fnv
 
-    && rm -rf /tmp/mininet \
-    && rm -rf /tmp/openflow
+RUN rm -rf /tmp/mininet
+RUN rm -rf /tmp/openflow
 
-EXPOSE 6653 6663
+EXPOSE 6653 6633
 
 VOLUME /home/mininetdir
 WORKDIR /home/mininetdir
