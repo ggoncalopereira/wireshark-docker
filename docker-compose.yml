@@ -1,10 +1,9 @@
 version: '2'
 services:
-	wireshark_mininet:
-		image: ggoncalopereira/wireshark-docker:latest
-		container_name: "wireshark_mininet"
-    	restart: always
-		volumes:
-      - ./data/mininetdir:/home/mininetdir
-		ports:
-			- 6653:6633
+ wiresharkmininet:
+   image: ggoncalopereira/wireshark-docker:latest
+   volumes:
+     - /home/mininetdir:/home/mininetdir
+   container_name: "wiresharkmininet"
+   ports:
+     - 6653:6633
